@@ -1,0 +1,92 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Appointment Section Styles */
+  .appointment-section {
+    background-color: #f9f9f9;
+  }
+  
+  .appointment-form {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .appointment-form h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .appointment-form .form-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+  }
+  
+  /* Image Section */
+  .appointment-section img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  /* Form Input Styles */
+  .form-control {
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+  
+  .form-check-label {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .form-check-input {
+    margin-right: 10px;
+  }
+  
+  /* Button Styles */
+  button {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    background-color: #ffb84d; /* Warning Yellow */
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #f7a800; /* Darker Yellow */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .appointment-form {
+      padding: 20px;
+    }
+  
+    .appointment-section {
+      padding: 30px 0;
+    }
+  
+    .form-group .d-flex {
+      flex-direction: column;
+    }
+  
+    .form-check {
+      margin-bottom: 10px;
+    }
+  }
+  

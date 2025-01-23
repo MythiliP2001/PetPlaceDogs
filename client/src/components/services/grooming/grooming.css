@@ -1,0 +1,49 @@
+.container-groom{
+    background-image: url('../../images/banner7.jpg');
+}
+
+
+.groom-container h1 {
+    font-size: 3rem;
+    color: #728ba6;
+  }
+  
+  .groom-container p {
+    display: flex;
+    padding: 20px;
+    gap: 10px;
+    font-size: 1.2rem;
+    color: #555;
+  }
+  .groom-img{
+    width: 20%;
+    height: 50%;
+  }
+  
+  .list-unstyled li {
+    font-size: 1.1rem;
+    color: #555;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .list-unstyled li:hover {
+    transform: translateX(10px);
+    color: #34414f;
+    cursor: pointer;
+  }
+  
+  .btn-groom-primary {
+    background-color: #728ba6;
+    border-radius: 30px;
+    border: none;
+    width: 30%;
+  }
+  
+  .btn-groom-primary:hover {
+    background-color: #05182c;
+  }
+  
+  .fas {
+    font-size: 1.2rem;
+  }
+  

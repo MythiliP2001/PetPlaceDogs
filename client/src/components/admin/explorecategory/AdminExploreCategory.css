@@ -1,0 +1,75 @@
+/* AdminExploreCategoryUnique.css */
+.admin-explore-category {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+  }
+  
+  .admin-explore-category-header h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .admin-explore-category-btn-add-new-pet {
+    background-color: #d09271;
+    color: white;
+    width: 20%;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+  }
+  
+  .admin-explore-category-btn-add-new-pet:hover {
+    background-color: #6a3b09;
+  }
+  
+  .admin-explore-category-table {
+    margin-top: 20px;
+    font-size: 14px;
+  }
+  
+  .admin-explore-category-table th {
+    background-color: #e9ecef;
+    text-align: center;
+    color: #555;
+  }
+  
+  .admin-explore-category-table td {
+    vertical-align: middle;
+    text-align: center;
+  }
+  
+  .admin-explore-category-pet-image {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+  
+  .admin-explore-category-row:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .admin-explore-category-btn-edit {
+    background-color: #516a85;
+    border: none;
+    font-size: 14px;
+  }
+  
+  .admin-explore-category-btn-edit:hover {
+    background-color: #0056b3;
+  }
+  
+  .admin-explore-category-btn-delete {
+    background-color: #d9606c;
+    border: none;
+    font-size: 14px;
+  }
+  
+  .admin-explore-category-btn-delete:hover {
+    background-color: #c82333;
+  }
+  

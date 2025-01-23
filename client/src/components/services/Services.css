@@ -1,0 +1,35 @@
+
+.service__flex {
+    margin-top: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .service__card div {
+    margin-bottom: 2rem;
+    margin-inline: auto;
+    width: 120px;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #dff3fd;
+    border-radius: 100%;
+  }
+  
+  .service__card img {
+    max-width: 45px;
+  }
+  .service__card p {
+    font-weight: 500;
+    color: var(--text-light);
+  }
+  .section__subheader{
+    text-align: center;
+    color: #87837d;
+  }
+  .section__header{
+    text-align: center; 
+  }

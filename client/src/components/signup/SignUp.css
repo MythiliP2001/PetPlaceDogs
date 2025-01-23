@@ -1,0 +1,115 @@
+/* SignUp Form Container */
+.signup-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url('../images/banner2.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  position: relative;
+}
+
+/* Form Labels */
+.signup-form-label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+  text-align: center;
+}
+
+/* Form Controls */
+.signup-form-input {
+  border-radius: 10px;  
+  padding: 12px 15px; 
+  margin-bottom: 15px;
+  width: 50%;  
+  background-color: none;
+  /* border: 1px solid #ccc;  */
+  transition: all 0.3s ease; 
+  align-items: center;
+  display: block;
+}
+
+/* Input Focus Effect */
+.signup-form-input:focus {
+  outline: none;
+  border: 1px solid #7b7f7c;  /* Change border color on focus */
+  box-shadow: 0px 0px 8px rgba(123, 127, 124, 0.5);  /* Soft shadow effect */
+}
+
+/* Submit Button */
+.signup-form-btn {
+  background-color: #7b7f7c;
+  border: none;
+  color: rgb(253, 246, 246);
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  width: 50%;
+  font-size: 16px;
+}
+
+.signup-form-btn:hover {
+  background-color: #a7b2aa;
+}
+
+/* Row with Border and Shadow */
+.signup-form-row {
+  padding: 20px;
+  /* background-color: #fff; */
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px; 
+}
+
+/* Column Layout for Inputs */
+.signup-form-col {
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+/* File Input Styling */
+input[type="file"] {
+  padding: 8px;
+  background-color: none;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 50%;  /* Ensure file input takes full width */
+}
+
+/* Center Button */
+.signup-form-btn {
+  width: 50%;
+  font-size: 16px;
+  margin-top: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Custom Responsive Design */
+@media (max-width: 768px) {
+  .signup-form-row {
+    padding: 10px;
+  }
+
+  .signup-form-col {
+    margin-bottom: 10px;
+    width: 80%;
+  }
+
+  .signup-form-btn {
+    font-size: 14px;
+    padding: 12px 15px;
+  }
+
+  /* Adjust input and button sizes for smaller screens */
+  .signup-form-input,
+  input[type="file"] {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,113 @@
+
+footer {
+    background-color: #554848;
+    color: #fff;
+    padding-top: 50px;
+  }
+  
+  .footer__container {
+    padding-bottom: 30px;
+  }
+  
+ 
+  .footer__logo a {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  
+  
+
+  .footer__links li {
+    list-style-type: none;
+  }
+  
+  .footer__links a {
+    color: #ddd;
+    text-decoration: none;
+    display: block;
+    padding: 5px 0;
+  }
+  
+  .footer__links a:hover {
+    color: #3e60a9;
+  }
+  
+  /* Social Icons Styling */
+  .footer__socials li {
+    display: inline-block; 
+    margin-right: 15px; 
+  }
+  
+  .footer__socials i {
+    font-size: 1.5rem;
+    color: #fff;
+    transition: color 0.3s ease; /* Added transition for smooth hover effect */
+  }
+  
+  .footer__socials i:hover {
+    color: #f1c40f;
+  }
+  
+  /* Footer Bar Styling */
+  .footer__bar {
+    background-color: #222;
+    color: #aaa;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  
+  /* Newsletter Form Styling */
+  .input-group input {
+    border-radius: 30px;
+    padding-left: 20px;
+    width: 80%; /* Ensure form input has space on smaller devices */
+  }
+  
+  .input-group .btn {
+    border-radius: 30px;
+    padding: 10px 20px;
+  }
+  
+  .input-group .btn i {
+    font-size: 1.2rem;
+  }
+  
+  /* Responsive Styling for Small Screens */
+  @media (max-width: 768px) {
+    .footer__container {
+      padding-top: 20px;
+    }
+  
+    .footer__col {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  
+    .footer__socials li {
+      margin-bottom: 10px;
+    }
+  
+    .input-group input {
+      width: 100%; /* Ensure input field takes full width on small screens */
+    }
+  
+    .input-group .btn {
+      width: 100%; /* Make button take full width as well */
+    }
+  }
+  
+  /* For Mobile Devices, Adjust Social Icons Size */
+  @media (max-width: 480px) {
+    .footer__socials i {
+      font-size: 2rem; /* Increase size for mobile users */
+    }
+  }
+  .footer__bar{
+    text-align: center;
+  }
+
+

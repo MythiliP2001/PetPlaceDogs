@@ -1,0 +1,95 @@
+ExploreCategory Component Styles
+
+/* Container styling */
+.container {
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  
+  /* Heading styling */
+  .text-center {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 2rem;
+  }
+  
+  /* Card styles */
+  .card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  .card-img-top {
+    border-radius: 8px 8px 0 0;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #555;
+  }
+  
+  .card-text {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Button styling */
+  .btn-addcart-category {
+    background-color: #1b222a;
+    border: none;
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: #304052;
+  }
+  .btn-gocart-category{
+    background-color: #1b222a;
+    border: none;
+    font-size: 0.9rem;
+    width: 20%;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .text-center {
+      font-size: 1.75rem;
+    }
+  
+    .card {
+      margin-bottom: 1rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .text-center {
+      font-size: 1.5rem;
+    }
+  
+    .card-img-top {
+      height: 150px;
+    }
+  
+    .card-title {
+      font-size: 1.1rem;
+    }
+  
+    .card-text {
+      font-size: 0.85rem;
+    }
+  }
+  

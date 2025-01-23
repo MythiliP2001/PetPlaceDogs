@@ -1,0 +1,111 @@
+/* AboutUs.css */
+
+.about-us-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* max-width: 900px; */
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 2s ease-in-out;
+  }
+  
+  .about-us-container.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .breadcrumb {
+    margin-bottom: 20px;
+    font-size: 0.9em;
+    color: #555;
+  }
+  
+  .breadcrumb a {
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  .breadcrumb a:hover {
+    text-decoration: underline;
+  }
+  
+  .about-us-container h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .about-us-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .text-section {
+    padding-bottom: 5px;
+    flex: 1;
+    padding-right: 20px;
+  }
+  
+  .text-section h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .text-section p {
+    font-size: 1.2em;
+    color: #666;
+    line-height: 1.6;
+  }
+  
+  .image-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+     transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  }
+  
+ 
+ .image-section img {
+    max-width: 100%;
+    height: auto;
+    gap: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .points-list { 
+    list-style: none;
+     padding: 0; 
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 20px;
+}
+.points-list li {
+     display: flex; 
+     align-items: center;
+     margin-bottom: 10px;
+} 
+.points-list li::before { 
+    content: '*'; 
+    color: #d9b065;
+     margin-right: 10px;
+}
+.about-btn{
+    height: auto;
+    padding: 10px;
+    gap: 10px;
+    border-radius: 30px;
+}
+.footer-sec{
+  padding-top: 10px;
+  background-color: #333;
+}
+   

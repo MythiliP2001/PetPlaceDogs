@@ -1,0 +1,16 @@
+.dashboard {
+    padding: 2rem;
+    background-color: #f8f9fa;
+  }
+  
+  .dashboard-title {
+    text-align: center;
+    color: #343a40;
+  }
+  
+  .dashboard-card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 8px;
+  }
+  

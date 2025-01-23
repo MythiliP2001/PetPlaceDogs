@@ -1,0 +1,26 @@
+.admin-edit-pet {
+    background-image: url('../../images//banner7.jpg');
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .admin-edit-pet h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .admin-edit-pet .form-control {
+    border-radius: 5px;
+  }
+  
+  .admin-edit-pet button {
+    margin-top: 15px;
+  }
+  .admineditpet-btn{
+    width: 30%;
+    align-items: center;
+    background-color: rgb(107, 95, 95);
+  }
+  .admineditpet-btn:hover{
+    background-color: rgb(184, 194, 194);
+  }

@@ -1,0 +1,112 @@
+
+/* AppDownload.css */
+
+/* General Section Styling */
+.app-download-section {
+    background-color:  #fdf2d9;
+    padding: 3rem 0;
+  }
+  
+  /* Mobile Images Styling */
+  .mobile-images {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .mobile-images .mobile-mockup {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+  
+  /* Text Content Styling */
+  .text-content {
+    text-align: left;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .section-description {
+    font-size: 1.25rem;
+    color: #555;
+  }
+  
+  .section-text {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+  }
+  
+  /* Download Buttons */
+  .download-buttons {
+    display: flex;
+    align-items: center;
+  }
+  
+  .btn-appstore {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: transparent;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .btn-appstore img {
+    max-width: 150px;
+    width: 100%;
+    height: auto;
+  }
+  
+  .btn-appstore:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .mobile-images .mobile-mockup {
+      max-width: 200px;
+    }
+  
+    .section-title {
+      font-size: 1.75rem;
+    }
+  
+    .section-description {
+      font-size: 1.1rem;
+    }
+  
+    .section-text {
+      font-size: 0.9rem;
+    }
+  
+    .btn-appstore img {
+      max-width: 120px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .section-title {
+      font-size: 1.5rem;
+    }
+  
+    .section-description {
+      font-size: 1rem;
+    }
+  
+    .section-text {
+      font-size: 0.8rem;
+    }
+  
+    .btn-appstore img {
+      max-width: 100px;
+    }
+  }
+  

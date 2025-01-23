@@ -1,0 +1,122 @@
+.intro__grid {
+    margin-top: 4rem;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+    justify-items: center;
+  }
+  
+  .intro__card {
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .intro__card:hover {
+    transform: translateY(-5px); /* Adds a subtle hover effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  .intro__card div {
+    max-width: 100px;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    padding: 2rem;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  
+  .intro__card:nth-child(1) div {
+    background-image: url("../../assets/intro_1_bg.png");
+  }
+  
+  .intro__card:nth-child(2) div {
+    background-image: url("../../assets/intro_2_bg.png");
+  }
+  
+  .intro__card:nth-child(3) div {
+    background-image: url("../../assets/intro_3_bg.png");
+  }
+  
+  .intro__card div img {
+    width: 75px;
+    height: auto;
+  }
+  
+  .intro__card h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem; 
+    font-weight: 600;
+    color: var(--text-dark);
+  }
+  
+  .intro__card p {
+    margin-bottom: 2rem;
+    color: var(--text-light);
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  .intro__card a {
+    display: inline-block;
+    padding: 0.5rem 2rem;
+    border: 2px solid;
+    border-radius: 5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: 0.3s;
+    align-items: center;
+  }
+  
+  .intro__card:nth-child(1) a {
+    color: #ffc737;
+    border-color: #ffc737;
+  }
+  
+  .intro__card:nth-child(1) a:hover {
+    color: var(--white);
+    background-color: #ffc737;
+  }
+  
+  .intro__card:nth-child(2) a {
+    color: #257ae7;
+    border-color: #257ae7;
+  }
+  
+  .intro__card:nth-child(2) a:hover {
+    color: var(--white);
+    background-color: #257ae7;
+  }
+  
+  .intro__card:nth-child(3) a {
+    color: #cba9b6;
+    border-color: #cba9b6;
+  }
+  
+  .intro__card:nth-child(3) a:hover {
+    color: var(--white);
+    background-color: #cba9b6;
+  }
+  
+  /* Additional Styling for Subheader and Header */
+  .section__subheader {
+    font-size: 18px;
+    color: #6c757d;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    align-items: center;
+  }
+  
+  .section__header {
+    font-size: 30px;
+    color: #343a40;
+    font-weight: 700;
+    margin-bottom: 40px;
+    align-items: center;
+  }
+  

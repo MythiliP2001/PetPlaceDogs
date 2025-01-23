@@ -1,0 +1,39 @@
+.search-bar {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  
+  .location-dropdown,
+  .search-input,
+  .search-button {
+    padding: 0.8rem 1rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+  
+  .location-dropdown {
+    flex: 0.3;
+  }
+  
+  .search-input {
+    flex: 1;
+  }
+  
+  .search-button {
+    background-color: #cd9dc0;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .search-button:hover {
+    background-color: #cd2dad;
+  }
+  
+  .icon {
+    margin-left: 5px;
+  }
+  

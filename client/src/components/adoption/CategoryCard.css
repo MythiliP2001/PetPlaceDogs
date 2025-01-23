@@ -1,0 +1,31 @@
+.category-card {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .category-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .icon {
+    font-size: 2rem;
+  }
+  
+  .content .title {
+    margin: 0;
+    color: #14274a;
+    font-size: 1.2rem;
+  }
+  
+  .content .count {
+    margin: 0;
+    color: #666;
+  }
+  
