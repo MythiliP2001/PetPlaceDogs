@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import './AdminAddPet.css';
 
 function AdminAddPet() {
   const [petData, setPetData] = useState({
@@ -57,7 +58,7 @@ function AdminAddPet() {
   };
 
   return (
-    <div>
+    <div className="admin-add-pet-container">
       <h2>Add New Pet</h2>
       <form onSubmit={handleSubmit}>
         <div>
@@ -68,6 +69,7 @@ function AdminAddPet() {
             value={petData.name}
             onChange={handleChange}
             required
+            className="admin-add-pet-input"
           />
         </div>
         <div>
@@ -77,6 +79,7 @@ function AdminAddPet() {
             value={petData.description}
             onChange={handleChange}
             required
+            className="admin-add-pet-input"
           ></textarea>
         </div>
         <div>
@@ -87,6 +90,7 @@ function AdminAddPet() {
             value={petData.price}
             onChange={handleChange}
             required
+            className="admin-add-pet-input"
           />
         </div>
         <div>
@@ -97,6 +101,7 @@ function AdminAddPet() {
             value={petData.category}
             onChange={handleChange}
             required
+            className="admin-add-pet-input"
           />
         </div>
         <div>
@@ -106,17 +111,15 @@ function AdminAddPet() {
             name="image"
             onChange={handleFileChange}
             required
+            className="admin-add-pet-file-input"
           />
         </div>
-        <button type="submit">Add Pet</button>
+        <button type="submit" className="admin-add-pet-submit-btn">
+          Add Pet
+        </button>
       </form>
       {message.text && (
-        <p
-          style={{
-            color: message.type === "success" ? "green" : "red",
-            fontWeight: "bold",
-          }}
-        >
+        <p className={message.type === "success" ? "success" : "error"}>
           {message.text}
         </p>
       )}

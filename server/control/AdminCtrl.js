@@ -1,3 +1,4 @@
+const mongoose = require('mongoose');
 const PetModel = require("../model/AdminModel");
 
 const AdminAddPet = async (req, res) => {
@@ -92,14 +93,56 @@ const fetchPetByCategory = async (req, res) => {
 const updatePet = async (req, res) => {
   const { id } = req.params;
   const updates = req.body;
+
+  // Validate if the ID is a valid ObjectId
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(400).json({ message: "Invalid ID format" });
+  }
+
   try {
+    // Find and update the pet by ID
     const updatedPet = await PetModel.findByIdAndUpdate(id, updates, { new: true });
-    if (!updatedPet) return res.status(404).json({ message: "Pet not found" });
-    res.status(200).json(updatedPet);
+
+    // If pet not found
+    if (!updatedPet) {
+      return res.status(404).json({ message: "Pet not found" });
+    }
+
+    res.status(200).json(updatedPet); // Return the updated pet
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
 };
 
 
-module.exports = { AdminAddPet, fetchPet, fetchPetById, fetchPetByCategory, updatePet};
+
+
+// Delete pet
+const deletePet = async (req, res) => {
+  const { id } = req.params;
+  
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(400).json({ message: "Invalid ID format" });
+  }
+  
+  try {
+    const deletedPet = await PetModel.findByIdAndDelete(id);
+    
+    if (!deletedPet) {
+      return res.status(404).json({ message: "Pet not found" });
+    }
+    
+    res.status(200).json({ message: "Pet deleted successfully", data: deletedPet });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+module.exports = { AdminAddPet, fetchPet, fetchPetById, fetchPetByCategory, updatePet, deletePet };
+
+
+
+module.exports = { AdminAddPet, fetchPet,
+   fetchPetById, fetchPetByCategory,
+   updatePet,
+  deletePet};

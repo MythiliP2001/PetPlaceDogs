@@ -1,106 +1,132 @@
 /* AdminAddPet.css */
 
-/* Main container styles */
-.admin-add-pet {
-  background-color: #f9fafb;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+/* Container for the form */
+.admin-add-pet-container {
   max-width: 600px;
-  margin: 20px auto;
+  margin: 40px auto;
+  padding: 30px;
+  background: linear-gradient(to right, #f9f9f9, #e0e0e0);
+  border-radius: 12px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
 }
 
-/* Header styling */
-.admin-add-pet h2 {
+/* Header */
+.admin-add-pet-container h2 {
   text-align: center;
-  color: #2c3e50;
+  font-size: 28px;
+  font-weight: 600;
   margin-bottom: 30px;
-  font-family: 'Roboto', sans-serif;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-/* Input and label styles */
-.admin-add-pet .form-group label {
-  font-weight: bold;
-  color: #495057;
-  margin-bottom: 5px;
-  display: inline-block;
-  font-size: 14px;
+/* Form labels */
+.admin-add-pet-container label {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  display: block;
+  color: #444;
+  transition: color 0.3s ease-in-out;
 }
 
-.admin-add-pet .form-control {
+/* Input fields */
+.admin-add-pet-container input[type="text"],
+.admin-add-pet-container input[type="number"],
+.admin-add-pet-container textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 2px solid #ddd;
   border-radius: 8px;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
   font-size: 16px;
-  padding: 10px;
-  border: 1px solid #ced4da;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  color: #333;
+  background-color: #fff;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease-in-out;
 }
 
-.admin-add-pet .form-control:focus {
-  border-color: #28a745;
-  box-shadow: 0 0 6px rgba(40, 167, 69, 0.5);
+.admin-add-pet-container input[type="text"]:focus,
+.admin-add-pet-container input[type="number"]:focus,
+.admin-add-pet-container textarea:focus {
+  border-color: #4CAF50;
   outline: none;
 }
 
-/* Button styling */
-.admin-add-pet .btn-success {
-  background-color: #5f7765;
-  border-color: #28a745;
-  font-size: 16px;
-  padding: 12px;
-  border-radius: 8px;
-  width: 100%;
-  transition: all 0.3s ease;
-  font-weight: bold;
-  color: #fff;
+/* Textarea specific style */
+.admin-add-pet-container textarea {
+  resize: vertical;
+  min-height: 120px;
+  max-height: 300px;
 }
 
-.admin-add-pet .btn-success:hover {
-  background-color: #687e6d;
-  border-color: #1e7e34;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Row and form group spacing */
-.admin-add-pet .row {
-  margin-bottom: 20px;
-}
-
-.admin-add-pet .form-group {
-  margin-bottom: 20px;
-}
-
-/* File input and image preview */
-.admin-add-pet .form-control-file {
+/* File input styling */
+.admin-add-pet-container input[type="file"] {
   display: block;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.admin-add-pet-container input[type="file"]:hover {
+  background-color: #ddd;
+}
+
+/* Submit button */
+.admin-add-pet-container button[type="submit"] {
   width: 100%;
-  padding: 8px;
-  background-color: #f8f9fa;
-  border: 1px dashed #ced4da;
+  padding: 14px;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 20px;
+  border: none;
   border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease-in-out;
 }
 
-.admin-add-pet .form-group img {
-  max-width: 100%;
-  border-radius: 8px;
-  margin-top: 15px;
-  max-height: 250px;
-  object-fit: cover;
+.admin-add-pet-container button[type="submit"]:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
 }
 
-/* Responsive styling */
-@media (max-width: 767px) {
-  .admin-add-pet {
-    padding: 20px;
-  }
+.admin-add-pet-container button[type="submit"]:active {
+  transform: scale(1);
+}
 
-  .admin-add-pet h2 {
-    font-size: 22px;
-  }
+/* Success and error message styling */
+.admin-add-pet-container p {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 20px;
+  font-size: 16px;
+}
 
-  .admin-add-pet .btn-success {
-    font-size: 14px;
-    padding: 10px;
+.admin-add-pet-container p.success {
+  color: #28a745;
+}
+
+.admin-add-pet-container p.error {
+  color: #dc3545;
+}
+
+/* Animation for messages */
+.admin-add-pet-container p {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

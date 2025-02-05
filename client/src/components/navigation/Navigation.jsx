@@ -5,47 +5,37 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import StoreIcon from '@mui/icons-material/Store';
-// import FavoriteIcon from '@mui/icons-material/Favorite';
+import './Navigation.css'; // Import custom CSS for styling
 
 function Navigation() {
-
-
   return (
-    
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar expand="lg" className="navbar-custom">
       <Container>
-      <nav>
-    </nav>
-        <Navbar.Brand href="#home">Pets World</Navbar.Brand>
+        <Navbar.Brand href="#home" className="navbar-brand">
+          Pets World
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link as={Link} to="/about">About</Nav.Link> 
-            <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
-            <Nav.Link as={Link} to="/store/dogs">Store</Nav.Link>
-            <Nav.Link as={Link} to="/Signin">SignIn</Nav.Link> 
-            <NavDropdown title="Pages" id="basic-nav-dropdown">
-              <NavDropdown.Item href="/petdetails">Pet Details</NavDropdown.Item>
-              <NavDropdown.Item href="/gallery">Gallery</NavDropdown.Item>
-              {/* <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item> */}
+            <Nav.Link as={Link} to="/" className="nav-item">Home</Nav.Link>
+            <Nav.Link as={Link} to="/about" className="nav-item">About</Nav.Link>
+            <Nav.Link as={Link} to="/contact" className="nav-item">Contact</Nav.Link>
+            <Nav.Link as={Link} to="/store/dogs" className="nav-item">Store</Nav.Link>
+            <Nav.Link as={Link} to="/signin" className="nav-item">SignIn</Nav.Link>
+            <NavDropdown title="Pages" id="basic-nav-dropdown" className="nav-item">
+              <NavDropdown.Item as={Link} to="/petdetails">Pet Details</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/gallery">Gallery</NavDropdown.Item>
             </NavDropdown>
           </Nav>
-          {/* <StoreIcon/> */}
           <div className="cart-icon-container">
-                  <Link to="/cart" className="cart-icon-link">
-                    <StoreIcon fontSize="large" />
-                  </Link>
-                </div>
-          {/* <FavoriteIcon /> */}
+            <Link to="/cart" className="cart-icon-link">
+              <StoreIcon fontSize="large" />
+            </Link>
+          </div>
         </Navbar.Collapse>
       </Container>
     </Navbar>
   );
 }
-
-
 
 export default Navigation;

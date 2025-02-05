@@ -1,105 +1,105 @@
-/* General Container Styling */
+/* General Section Styles */
 .section__container {
-  width: 50%;
   padding: 50px 20px;
-  background-color: #f7f7f7;
   text-align: center;
 }
 
-.about__container {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
+.section__subheader {
+  font-size: 1.2rem;
+  color: #007bff;
+  margin-bottom: 20px;
 }
 
-/* Header and Subheader */
 .section__header {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: bold;
   color: #333;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 /* About Row Styling */
 .about-row {
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
   margin-bottom: 40px;
 }
 
-
 .about-image {
-  flex: 1;
-  max-width: 300px;
   width: 100%;
-  height: auto;
+  max-width: 300px;
   margin-bottom: 20px;
 }
 
-.about-image img {
-  width: 50%;
-  height: 50%;
-  object-fit: cover;
+.about-img {
+  width: 100%;
   height: auto;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
 }
 
-.about-image img:hover {
+.about-img:hover {
   transform: scale(1.05);
 }
 
-
+/* About Content */
 .about-content {
-  flex: 2;
   max-width: 600px;
-  text-align: left;
+  text-align: center;
 }
 
-.about-content span img {
+.about-icon {
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.about-icon-img {
   width: 40px;
-  height: auto;
+  height: 40px;
   margin-bottom: 10px;
 }
 
 .about-content h4 {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   color: #333;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .about-content p {
-  font-size: 1.1rem;
-  color: #666;
+  font-size: 1rem;
+  color: #555;
   line-height: 1.5;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+/* Responsive Styles */
+@media (min-width: 768px) {
   .about-row {
-    flex-direction: column;
-    text-align: center;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
   }
 
   .about-image {
-    margin-bottom: 20px;
-    width: 80px;
-    height: 80px;
+    margin-right: 30px;
+  }
+
+  .about-img {
+    max-width: 250px;
   }
 
   .about-content {
-    max-width: 100%;
+    text-align: left;
+    max-width: 60%;
+  }
+}
+
+/* Mobile View (Small Devices) */
+@media (max-width: 767px) {
+  .about-content {
+    text-align: center;
+  }
   
-  }
-
-  .section__header {
-    font-size: 2rem;
-  }
-
-  .about-content h4 {
-    font-size: 1.5rem;
+  .about-img {
+    max-width: 100%;
   }
 }

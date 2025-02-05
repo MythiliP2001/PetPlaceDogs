@@ -1,21 +1,26 @@
+const express = require('express');
+const ProductCtrl = require('../control/AdminCtrl');
+const upload = require('../multerfiles/userupload');
+const { AdminAddPet, fetchPet, fetchPetById, fetchPetByCategory, updatePet, deletePet } = require('../control/AdminCtrl');
 
-const express=require('express')
-const ProductCtrl= require('../control/AdminCtrl')
-const upload = require('../multerfiles/userupload')
-const {AdminAddPet, fetchPet, fetchPetById,fetchPetByCategory, updatePet} = require('../control/AdminCtrl')
+const adminRouter = express.Router();
 
-const adminRouter = express.Router()
+// Add new pet route
+adminRouter.post('/addpet', upload.single('image'), AdminAddPet);
 
-const adminEditRouter = express.Router();
+// Fetch all pets
+adminRouter.get('/pets', ProductCtrl.fetchPet);
 
+// Fetch pet by ID
+adminRouter.get('/pets/:id', fetchPetById);
 
-adminRouter.post('/addpet',upload.single('image'), AdminAddPet)
-adminRouter.get('/pets', ProductCtrl.fetchPet)
+// Fetch pets by category
+adminRouter.get('/pets/category', fetchPetByCategory);
 
-// editadmin
-adminEditRouter.get('/fetchpet', fetchPet);
-adminEditRouter.get('/fetchpet/:id', fetchPetById);
-adminEditRouter.put('/fetchpet/:id', updatePet);
-adminEditRouter.get('/fetchpet/category', fetchPetByCategory)
+// Update pet details
+adminRouter.put('/pets/:id', updatePet);
 
-module.exports= adminRouter, adminEditRouter;
+// Delete pet by ID
+adminRouter.delete('/pets/:id', deletePet);
+
+module.exports = adminRouter;

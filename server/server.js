@@ -7,7 +7,7 @@ require('dotenv').config();
 const upload = require('./multerfiles/userupload')
 
 const path = require('path');
-const Image = require('./model/Image')
+
 
 
 
@@ -30,7 +30,7 @@ app.use(cors())
 app.use(express.urlencoded({extends:true}))
 app.use(express.json())
 
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+app.use('/uploads', express.static(path.join(__dirname,  'multerfiles/uploads')));
  
 
 const mongoose=require('mongoose')
@@ -49,34 +49,8 @@ async function main(){
     console.log("mongodb connected")
 }
 
-// image
-app.post('/uploads', upload.single('image'), async (req, res) => {
-  if (!req.file) {
-    return res.status(400).send('No file uploaded');
-  }
-  console.log("Uploaded file:", req.file);
 
-  try {
-    // Save the image metadata to MongoDB
-    const newImage = new Image({
-      filename: req.file.filename,
-      filepath: `/uploads/${req.file.filename}`, // The file path for serving the image
-      
-      originalName: req.file.originalname
-    });
-    console.log("Pet image:", pet.image); // Check if the correct filename is being passed
 
-    await newImage.save(); // Save the image document to MongoDB
-
-    res.status(200).json({
-      message: 'Image uploaded successfully',
-      image: newImage
-    });
-  } catch (err) {
-    console.error(err);
-    res.status(500).send('Error saving image to the database');
-  }
-});
 
 
 
@@ -90,6 +64,10 @@ const petClothRouter = require('./router/PetClothRouter');
 const orderRouter = require('./router/OrderRouter');
 const viewRouter = require('./router/ProductRouter')
 const petBedRouter = require('./router/PetBedRouter')
+const petFoodRouter = require('./router/PetFoodRouter')
+const petToyRouter = require('./router/PetToyRouter')
+const adoptRouter = require('./router/AdoptRouter')
+
 
 
 app.use('/cart',CartRouter)
@@ -102,6 +80,9 @@ app.use('/petcloth', petClothRouter)
 app.use('/orders', orderRouter);
 app.use('/adminview', viewRouter)
 app.use('/petbed', petBedRouter)
+app.use('/petfood',petFoodRouter)
+app.use('/pettoy', petToyRouter)
+app.use('/admin',adoptRouter)
 
 
 

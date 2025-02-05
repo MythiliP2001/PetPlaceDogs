@@ -1,49 +1,62 @@
-/* AdminDashboard.css */
+/* General Styles */
+body {
+  background-color: #f4f4f9;
+  font-family: 'Roboto', sans-serif;
+}
+
 .admin-dashboard {
-    background-color: #e4ebf3;    
-    border-radius: 10px;
+  padding: 20px;
+}
+
+.dashboard-title {
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #333;
+  font-weight: 700;
+}
+
+.dashboard-card {
+  border: none;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard-card .card-body {
+  padding: 30px;
+  text-align: center;
+  background: linear-gradient(135deg, #6f86d6, #48c6ef);
+  color: white;
+  border-radius: 10px;
+}
+
+.dashboard-card .card-body:hover {
+  background: linear-gradient(135deg, #48c6ef, #6f86d6);
+}
+
+.dashboard-card .card-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 0;
+  text-transform: uppercase;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 767px) {
+  .dashboard-card .card-body {
     padding: 20px;
   }
-  
-  .dashboard-title {
-    text-align: center;
-    font-size: 2rem;
-    font-weight: bold;
-    color: #343a40; /* Dark gray */
-    margin-bottom: 30px;
-  }
-  
-  .dashboard-card {
-    transition: transform 0.3s, box-shadow 0.3s;
-    border: none;
-    background-color: #ddc0c0; /* White card background */
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
-    cursor: pointer;
-  }
-  
-  .dashboard-card:hover {
-    transform: translateY(-5px); /* Slightly lift card on hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
-  }
-  
+
   .dashboard-card .card-title {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #b07870; /* Bootstrap primary blue */
+    font-size: 18px;
   }
-  
-  .dashboard-card .card-text {
-    color: #6c757d; /* Bootstrap secondary gray */
+
+  .dashboard-title {
+    font-size: 28px;
   }
-  
-  @media (max-width: 768px) {
-    .dashboard-title {
-      font-size: 1.5rem;
-    }
-  
-    .dashboard-card .card-title {
-      font-size: 1.2rem;
-    }
-  }
-  
+}

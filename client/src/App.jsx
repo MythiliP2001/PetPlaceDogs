@@ -39,6 +39,8 @@ import { AuthProvider } from './components/context/AuthContext';
 import SignIn from './components/Signin/Signin';
 import Checkout from './components/cartcheckout/Checkout';
 import AdminViewOrders from './components/vieworder/AdminViewOrder';
+import AdminAdoptPet from './components/admin/adoptpet/AdminAdoptPet';
+import Profile from './components/profile/Profile';
 
 const App = () => {
 
@@ -81,6 +83,8 @@ const App = () => {
         <Route path='/adminproducts' element={<AdminProducts/>}/>
          <Route path='/checkout' element={<Checkout/>}/>
          <Route path='/adminvieworders' element={<AdminViewOrders/>}/>
+         <Route path='/adminadoptpet' element={<AdminAdoptPet/>}/>
+         <Route path='/profile' element={<Profile/>}/>
          
            </Routes>
     </Router>

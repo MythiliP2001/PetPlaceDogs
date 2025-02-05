@@ -1,92 +1,111 @@
-/* AdminProducts.css */
-
-/* General Layout */
 .admin-products {
-    padding: 20px;
-    font-family: Arial, sans-serif;
-  }
-  
-  .admin-products__header {
-    font-size: 2rem;
-    margin-bottom: 20px;
-  }
-  
-  .admin-products__message {
-    color: green;
-    margin-bottom: 20px;
-  }
-  
-  .admin-products__form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-width: 600px;
-    margin-bottom: 20px;
-  }
-  
-  .admin-products__form input,
-  .admin-products__form textarea {
-    padding: 10px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .admin-products__form button {
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .admin-products__form button:hover {
-    background-color: #45a049;
-  }
-  
-  .admin-products__list {
-    max-width: 800px;
-  }
-  
-  .admin-products__item {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    padding: 15px;
-    border-radius: 5px;
-  }
-  
-  .admin-products__image {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-  }
-  
-  .admin-products__details {
-    flex: 1;
-  }
-  
-  .admin-products__name {
-    font-size: 1.2rem;
-    font-weight: bold;
-  }
-  
-  .admin-products__price,
-  .admin-products__category {
-    margin: 5px 0;
-  }
-  
-  .admin-products__button {
-    padding: 10px;
-    background-color: #ff5722;
-    color: white;
-    border: none;
-    cursor: pointer;
-    margin-top: 10px;
-  }
-  
-  .admin-products__button:hover {
-    background-color: #e64a19;
-  }
-  
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.admin-products__switch {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.admin-products__switch button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.admin-products__message {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ff0000;
+}
+
+.product-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.form-title {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.form-input {
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 300px;
+}
+
+.form-button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.cancel-button {
+  background-color: #f44336;
+  color: white;
+}
+
+.admin-products__list {
+  margin-top: 20px;
+}
+
+.list-title {
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.product-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product-item {
+  border: 1px solid #ddd;
+  margin: 10px;
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+}
+
+.product-image {
+  width: 200px;  /* Fixed width */
+  height: 200px; /* Fixed height */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  margin-bottom: 10px;
+}
+
+.product-name,
+.product-description,
+.product-price,
+.product-category {
+  margin: 5px 0;
+}
+
+.product-button {
+  margin: 5px;
+  padding: 10px 15px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.no-products {
+  font-size: 16px;
+  color: #666;
+}

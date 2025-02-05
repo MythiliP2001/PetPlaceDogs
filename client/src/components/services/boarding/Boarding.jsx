@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import axios from "axios"; // Import Axios
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import './Boarding.css';
 import { assets } from "../../../assets/assets";
 
@@ -12,6 +13,8 @@ const Boarding = () => {
   const [loading, setLoading] = useState(false); // For loading state
   const [error, setError] = useState(""); // For error handling
   const [success, setSuccess] = useState(""); // For success message
+
+  const navigate = useNavigate(); // Initialize useNavigate hook
 
   // Define costs for each service
   const serviceRates = {
@@ -52,7 +55,6 @@ const Boarding = () => {
     };
     console.log("Booking data:", bookingData);
 
-
     try {
       // Make the POST request to the API
       const response = await axios.post("http://localhost:5000/boarding/createbooking", bookingData);
@@ -73,6 +75,11 @@ const Boarding = () => {
     }
   };
 
+  // Navigate to home page
+  const goHome = () => {
+    navigate("/"); // Replace with your home route
+  };
+
   return (
     <section className="boarding-section py-5">
       <Container fluid>
@@ -84,7 +91,8 @@ const Boarding = () => {
 
           {/* Right corner: Form */}
           <Col md={6} className="text-center form-col">
-            <h2 className="mb-4">Get a Quote for Pet Boarding</h2>
+            <h2 className="heading mb-4">Get a Quote for Pet Boarding</h2>
+            <p className="subheading mb-4">Select your pet, boarding service, and the duration to calculate the cost.</p>
             <Form>
               {/* Pet Selection */}
               <Form.Group className="mb-3">
@@ -138,6 +146,15 @@ const Boarding = () => {
                 disabled={loading}
               >
                 {loading ? "Booking..." : "Book Now"}
+              </Button>
+
+              {/* Go Home Button */}
+              <Button
+                variant="secondary"
+                className="mt-3"
+                onClick={goHome}
+              >
+                Go Home
               </Button>
             </Form>
           </Col>

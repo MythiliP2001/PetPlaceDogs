@@ -9,20 +9,24 @@ const PetCloth = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+ 
+ 
   useEffect(() => {
     const fetchPetClothes = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/petcloth/getcloth');
-        setClothes(response.data); // Set the fetched clothes into state
-        setLoading(false); // Set loading to false after data is fetched
+        const { data } = await axios.get('http://localhost:5000/petcloth/getcloth');
+        setClothes(data);
       } catch (error) {
         setError('Error fetching pet clothes. Please try again later.');
-        setLoading(false); // Set loading to false in case of error
+      } finally {
+        setLoading(false); // Ensures loading state is updated
       }
     };
-
+  
     fetchPetClothes();
-  }, []); // Empty dependency array to run only once when component mounts
+  }, []);
+  
+  // Empty dependency array to run only once when component mounts
 
   const handleAddToCart = async (item) => {
     try {
@@ -53,6 +57,7 @@ const PetCloth = () => {
             <div key={item._id} className="pet-cloth-item">
               <img
                 src={`http://localhost:5000/uploads/${item.image}`} // Fallback image
+               
                 alt={item.name}
                 className="pet-cloth-image"
               />
@@ -62,8 +67,9 @@ const PetCloth = () => {
               <button
                 className="add-to-cart-button"
                 onClick={() => handleAddToCart(item)}
+                disabled={loading}
               >
-                Add to Cart
+                 {loading ? 'Adding...' : 'Add to Cart'}
               </button>
             </div>
           ))

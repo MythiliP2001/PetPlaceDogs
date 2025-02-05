@@ -4,30 +4,32 @@ import './PetBed.css';
 import { useCart } from '../../../components/context/CartContext';
 
 const PetBed = () => {
-  const { addToCart } = useCart(); // Access addToCart function
-  const [beds, setBeds] = useState([]); // State to store fetched beds
-  const [loading, setLoading] = useState(true); // Loading state
-  const [error, setError] = useState(null); // Error state
+  const { addToCart } = useCart(); 
+  const [beds, setBeds] = useState([]);
+  const [loading, setLoading] = useState(true); 
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchPetBeds = async () => {
       try {
         const response = await axios.get('http://localhost:5000/petbed/getbeds');
-        setBeds(response.data); // Store fetched data in state
-        setLoading(false); // Set loading to false
+        console.log("Fetched pet beds:", response.data);
+        setBeds(response.data);
+        setLoading(false);
       } catch (err) {
+        console.error('Error fetching pet beds:', err);
         setError('Error fetching pet beds. Please try again later.');
-        setLoading(false); // Set loading to false in case of error
+        setLoading(false);
       }
     };
 
     fetchPetBeds();
-  }, []); // Run only once on component mount
+  }, []);
 
   const handleAddToCart = async (item) => {
     try {
-      await addToCart(item); // Add the item to the cart
-      alert(`${item.name} added to cart!`); // Feedback for the user
+      await addToCart(item); 
+      alert(`${item.name} added to cart!`); 
     } catch (err) {
       console.error('Error adding item to cart:', err);
       setError('Error adding the item to the cart.');
@@ -35,24 +37,24 @@ const PetBed = () => {
   };
 
   if (loading) {
-    return <div>Loading pet beds...</div>; // Show loading text while waiting for data
+    return <div className="loading-message">Loading pet beds...</div>;
   }
 
   if (error) {
-    return <div>{error}</div>; // Show error message if there's an issue
+    return <div className="error-message">{error}</div>;
   }
 
   return (
-    <div>
-      <h1>Pet Beds</h1>
-      <div className="pet-bed-container">
+    <div className="pet-bed-page">
+      <h1 className="pet-bed-title">Pet Beds</h1>
+      <div className="pet-bed-list">
         {beds.length === 0 ? (
-          <div>No pet beds available at the moment.</div> // Handle case where no beds are fetched
+          <div className="no-beds-message">No pet beds available at the moment.</div>
         ) : (
           beds.map((item) => (
             <div key={item._id} className="pet-bed-item">
               <img
-                src={`http://localhost:5000/uploads/${item.image}`} // Replace with actual image URL
+                src={`http://localhost:5000/uploads/${item.image}`}
                 alt={item.name}
                 className="pet-bed-image"
               />

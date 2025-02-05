@@ -52,7 +52,6 @@ const addToCart = async (req, res) => {
 const getCart = async (req, res) => {
   try {
     const { userId } = req.query;
-    
 
     // Validate userId
     if (!mongoose.Types.ObjectId.isValid(userId)) {
@@ -71,44 +70,43 @@ const getCart = async (req, res) => {
     res.status(500).json({ message: 'Error fetching cart' });
   }
 };
+    
+
+
 
 
 // Remove product from cart
 const removeFromCart = async (req, res) => {
-  
-  
-  const { userId, productId } = req.query;
-  console.log("Received request to remove from cart:", { userId, productId });
-  console.log(req.query);
+  const { userId } = req.body;  // Ensure `userId` is retrieved from the request body
+  const { id: productId } = req.params;  // Ensure `productId` is retrieved from route parameters
 
+  console.log("Received request to remove from cart:", { userId, productId });
+
+  if (!mongoose.Types.ObjectId.isValid(userId)) {
+    console.log("Invalid user ID");
+    return res.status(400).json({ message: 'Invalid user ID' });
+  }
+
+  if (!mongoose.Types.ObjectId.isValid(productId)){
+    console.log("Invalid product ID");
+    return res.status(400).json({ message: 'Invalid user ID or product ID' });
+  }
 
   try {
-    
-    // Validate the userId and productId
-    if (!mongoose.Types.ObjectId.isValid( userId ) || !mongoose.Types.ObjectId.isValid( productId )) {
-      return res.status(400).json({ error: 'Invalid userId or productId' });
-    }
-
-    // Check if the user exists and the cart item is in the user's cart
     const cartItem = await Cart.findOne({ userId, productId });
-
     if (!cartItem) {
+      console.log("Product not found in cart");
       return res.status(404).json({ message: 'Product not found in cart' });
     }
 
-    // If the cart item exists, remove it
-    await Cart.findOneAndDelete({ userId, productId });
-
-    res.status(200).json({ message: 'Item removed from cart' });
+    await Cart.deleteOne({ userId, productId });
+    console.log("Item removed from cart");
+    res.status(200).json({ message: 'Item removed from cart', success: true });
   } catch (error) {
     console.error('Error removing product from cart:', error);
     res.status(500).json({ error: 'Error removing product from cart' });
   }
 };
-
-
-
-
 
 
 module.exports = { addToCart, getCart, removeFromCart };

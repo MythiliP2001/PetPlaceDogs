@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useNavigate, Await } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { Container, Form, Button } from "react-bootstrap";
-import { pets_list } from "../../../assets/assetsnew";
 import axios from "axios";
 import './AdminEditPet.css';
 
@@ -19,21 +18,11 @@ const AdminEditPet = () => {
   });
 
   // Fetch the pet data based on the ID when the component loads
-  // useEffect(() => {
-  //   const pet = pets_list.find((pet) => pet._id === id);
-  //   if (pet) {
-  //     setPetData(pet);
-  //   } else {
-  //     alert("Pet not found!");
-  //     navigate("/adminexplorecategory")
-  //   }
-  // }, [id, navigate]);
-
-
   useEffect(() => {
     const fetchPet = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/editpet/${id}`); // Fetch pet details
+        // Corrected URL to match backend route
+        const response = await axios.get(`http://localhost:5000/admin/pets/${id}`);
         setPetData(response.data);
       } catch (error) {
         console.error("Error fetching pet data:", error);
@@ -45,7 +34,6 @@ const AdminEditPet = () => {
     fetchPet();
   }, [id, navigate]);
 
-
   // Handle form input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -53,16 +41,17 @@ const AdminEditPet = () => {
   };
 
   // Handle form submission
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Perform backend API call here to update the pet (if needed)
-    try{
-      await axios.put(`http://localhost:5000/editpet/${id}`, petData);
-    
-    alert('Pet details updated successfully');
-    navigate("/adminexplorecategory"); // Redirect back to the pet list
-    }catch(error){
+    // Perform backend API call here to update the pet
+    try {
+      // Corrected URL to match backend route
+      await axios.put(`http://localhost:5000/admin/pets/${id}`, petData);
+
+      alert('Pet details updated successfully');
+      navigate("/adminexplorecategory"); // Redirect back to the pet list
+    } catch (error) {
       console.error("Error updating pet:", error);
       alert("Failed to update pet details. Please try again.");
     }
@@ -128,7 +117,7 @@ const AdminEditPet = () => {
             required
           />
         </Form.Group>
-        <Button type="submit"  className="admineditpet-btn">
+        <Button type="submit" className="admineditpet-btn">
           Save Changes
         </Button>
       </Form>

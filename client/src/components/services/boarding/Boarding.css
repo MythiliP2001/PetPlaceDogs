@@ -1,28 +1,87 @@
+/* General Section Styles */
 .boarding-section {
-    display: flex;
-    background-color: #f6ebf2;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #f9f9f9;
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2f3943;
+}
+
+.subheading {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.total-cost {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.total-cost h3 {
+  color: #28a745;
+}
+
+.boarding-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.1rem;
+}
+
+.boarding-btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.alert {
+  margin-top: 20px;
+}
+
+/* Image Styling */
+.boarding-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+  .boarding-section {
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
-  
-  .boarding-section h2 {
-    font-weight: bold;
-    color: #333;
+
+  .form-col {
+    text-align: left;
   }
-  
-  .total-cost {
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #8098b3;
-  }
-  
-  .total-cost h3 {
-    color: #154520;
-  }
-  
+
   .boarding-btn {
-    font-size: 1.2rem;
-    border-radius: 15px;
-    background-color: #333;
-    width: 20%;
+    width: auto;
+    margin-top: 20px;
   }
-  
+}
+.boarding-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.1rem;
+}
+
+.mt-3 {
+  margin-top: 10px;
+}
+
+.go-home-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.1rem;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+.go-home-btn:hover {
+  background-color: #5a6268;
+  border-color: #545b62;
+}
